@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgresql:
+    image: postgres:9.6-alpine
+    hostname: postgresql
+    container_name: postgresql
+    networks: 
+      network_pog_u:
+    environment:
+      - POSTGRES_PASSWORD=root
+    ports:
+      - 5432:5432
+    volumes:
+      - ./config/postgresql/initdb:/docker-entrypoint-initdb.d
+      - postgres-wow-volume:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres-wow-volume:
+
+networks:
+  network_pog_u:
+    driver: bridge

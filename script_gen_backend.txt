@@ -1,0 +1,18 @@
+download node -> node -v, npm -v
+
+npm install -g @nestjs/cli
+
+nest new my-nest-project
+
+npm run start:dev
+#######################################################
+npm install --save @nestjs/typeorm typeorm pg
+npm install --save dotenv
+#we actually want to work in typescript in development, we will use nodemon with dedicated a nodemon.json to run our development server with the ts-node module hooking up the typescript compiler
+npm i --save-dev nodemon ts-node
+
+npm install --save @nestjs/swagger swagger-ui-express
+
+npm run typeorm:migration:generate -- my_init
+
+npm install --save @nestjs/swagger swagger-ui-express
